@@ -514,10 +514,6 @@ async def get_shortlink(chat_id, link):
         except Exception as e:
             logger.error(e)
             return link
-    else:
-        shortzy = Shortzy(api_key=API, base_site=URL)
-        link = await shortzy.convert(link)
-        return link
     
 async def get_tutorial(chat_id):
     settings = await get_settings(chat_id) #fetching settings for group
